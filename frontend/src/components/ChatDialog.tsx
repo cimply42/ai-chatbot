@@ -28,6 +28,7 @@ export default function ChatDialog() {
   const { queryChatBot, startChatBot } = useChatBotApi();
 
   const onSend = (data: z.infer<typeof FormSchema>) => {
+    form.setValue("message", "");
     setUserMessages((prev) => [...prev, data.message]);
     setIsLoadingBotText(true);
   };
